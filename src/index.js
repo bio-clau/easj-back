@@ -36,5 +36,5 @@ process.on("unhandledRejection", (err, promise) => {
   //Stops the server from accepting new connections and keeps existing connections.
   server.close(() => {
     process.exit(1);
-  });
+  }); 
 });
