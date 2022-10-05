@@ -8,7 +8,7 @@ const connectDB = require('./config/db');
 //Initialize DB and express
 connectDB();
 const app = express();
-
+ 
 //middlewares
 app.use(morgan('dev'));
 app.use(
