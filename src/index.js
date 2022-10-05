@@ -13,7 +13,7 @@ const app = express();
 app.use(morgan('dev'));
 app.use(
   cors({
-    origin: '*',
+    origin: process.env.CLIENT_API,
     credentials: true
   })
 );
