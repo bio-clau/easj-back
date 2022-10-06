@@ -16,6 +16,9 @@ const MembersSchema = mongoose.Schema({
   apellidoNombre: {
     type: String
   },
+  matricula:{
+    type: Number
+  },
   direccion: {
     type: String
   },
