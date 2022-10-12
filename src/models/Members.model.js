@@ -34,6 +34,12 @@ const MembersSchema = mongoose.Schema({
     type: Boolean,
     default: false
   },
+  ELLOSnos:{
+    type: Boolean
+  },
+  INHABnos: {
+    type: Boolean
+  },
   telefono: {
     type: String
   },

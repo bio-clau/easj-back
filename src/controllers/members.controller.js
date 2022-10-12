@@ -35,14 +35,16 @@ exports.createOne = async (req, res, next) => {
 
 exports.updateOne = async (req, res, next) => {
   try {
-    const {voto, correo, observacion, calificativo, matricula} = req.body;
+    const {voto, correo, observacion, calificativo, matricula, ELLOSnos, INHABnos} = req.body;
     const {id} = req.params;
     const member = await Members.findByIdAndUpdate(id,{
       voto,
       correo,
       observacion,
       calificativo,
-      matricula
+      matricula,
+      INHABnos,
+      ELLOSnos
     },{new:true});
     if(!member) return next(new ErrorResponse(404, "miembro no encontrado"));
     const members = await Members.find();
