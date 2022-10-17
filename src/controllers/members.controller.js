@@ -1,6 +1,7 @@
 const { findByIdAndUpdate } = require('../models/Members.model');
 const Members = require('../models/Members.model');
 const ErrorResponse = require('../utils/errorResponse');
+const fs = require('fs/promises');
 
 exports.getAll = async (req, res, next) => {
   try {
@@ -53,3 +54,13 @@ exports.updateOne = async (req, res, next) => {
     next(error)
   }
 };
+
+exports.getDB = async (req, res, next) => {
+  try {
+    const members = await Members.find();
+    await fs.writeFile('./test.json', members);
+    res.status(200).json('okis')
+  } catch (error) {
+    next(error)
+  }
+}
