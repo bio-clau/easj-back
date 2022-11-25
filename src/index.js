@@ -12,11 +12,10 @@ const app = express();
  
 //middlewares
 app.use(morgan('dev'));
-app.use(
-  cors({
-    origin: '*',
-  })
-);
+app.use(cors({
+  origin: '*',
+  credentials: true,
+}));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
