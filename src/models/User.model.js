@@ -7,7 +7,7 @@ const PersonSchema = mongoose.Schema({
   },
   calificativo: {
     type: String,
-    enum:['SIN', 'NOS', 'ELLOS', 'INHAB']
+    enum:['SIN', 'NOS', 'ELLOS', 'INHAB', '']
   },
   ELLOSnos:{
     type: Boolean

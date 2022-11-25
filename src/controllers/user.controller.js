@@ -72,8 +72,7 @@ exports.updateOne = async (req, res, next)=>{
           telefono}
       ) 
      }
-     console.log("🚀 ~ file: user.controller.js ~ line 60 ~ newVoterInfo ~ newVoterInfo", newVoterInfo)
-    aux.voter_info = newVoterInfo;
+    aux.voter_info = [...newVoterInfo];
     await aux.save();
     const voters = await Voter.find();
     const rta = voters.map(v=>{
