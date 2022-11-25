@@ -4,6 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const errorHandler = require('./middlewares/errorMiddleware');
 const connectDB = require('./config/db');
+const {auth} = require('./middlewares/protect');
 
 //Initialize DB and express
 connectDB();
@@ -20,7 +21,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 //Routes
-app.use('/api/members', require('./routes/members.routes'))
+app.use('/api/voter', auth, require('./routes/voter.routes'))
+app.use('/api/user', auth, require('./routes/user.routes'))
 //error handler
 app.use(errorHandler);
 //server

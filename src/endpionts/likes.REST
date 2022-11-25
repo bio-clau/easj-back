@@ -1,0 +1,26 @@
+###
+POST http://localhost:8001/api/likes
+Content-Type: application/json
+
+{
+  "user_id": "AAOOd6doesScpzeDorJrQekQwZ72",
+  "role": "admin"
+}
+
+
+###
+GET http://localhost:8001/api/likes/GZi0eTH5fhgl8mSW6TrITSyLiwK2
+
+###
+PATCH http://localhost:8001/api/user/GZi0eTH5fhgl8mSW6TrITSyLiwK2
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE5NmFkY2U5OTk5YmJmNWNkMzBmMjlmNDljZDM3ZjRjNWU2NDI3NDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZWFzai1iZjg2ZiIsImF1ZCI6ImVhc2otYmY4NmYiLCJhdXRoX3RpbWUiOjE2NjkzMjY4MTUsInVzZXJfaWQiOiJUOTdicUZoVkNFUkxwRU01UUpHaUx1cGlZdmMyIiwic3ViIjoiVDk3YnFGaFZDRVJMcEVNNVFKR2lMdXBpWXZjMiIsImlhdCI6MTY2OTM5NTgwMCwiZXhwIjoxNjY5Mzk5NDAwLCJlbWFpbCI6ImFsZ29AbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiYWxnb0BtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.q_ziNG7qb-4axlzu420IzK8jw29K33PEyvz6LNKkQ3SAnWemcoGgOL-MLjrrgA-DxaRS33Pk3sn8QA_lUdfidENCoRZcTEtp1vQ5iSTND6RuRzR9MK6kVHCbSMk7Irx1QxJ1y7yA74KWI_bWxoixoAMZvKm5I_QpVFT9qfm0E_v3SOoojkviAIJCCIcHavGd3gI7sw6xHxZ38wCger71IO0KMEtRcRU6Rq7x6u6CoIIJ7XE7795RBtB78Kr2INbNDGo7aKg6gJsifAuM-OA9llphPniyV5PFzKlyiQAt9K2T8WTxwMJr_bQ_FC852licLCsxTC_kLupHf1EAkrbKCg
+Content-Type: application/json
+
+{
+  "member_id": "637fe0d75b743ac2f54ac1f8",
+  "calificativo": "ELLOS",
+  "ELLOSnos": true,
+  "INHABnos": false,
+  "observacion": "prueba 2 aaaaaaaaaa",
+  "telefono": "2333355332"
+}

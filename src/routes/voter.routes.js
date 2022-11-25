@@ -5,14 +5,14 @@ const {
   getOne,
   createOne,
   updateOne
-} = require('../controllers/members.controller');
+} = require('../controllers/voter.controller');
 const router = express.Router();
 
 router.route('/')
 .get(getAll)
-.post(createOne)
+// .post(createOne)
 router.route('/:id')
 .get(getOne)
-.patch(updateOne)
+// .patch(updateOne)
 
 module.exports = router

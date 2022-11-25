@@ -1,30 +1,25 @@
 ###
-POST http://localhost:8001/api/members
+POST http://localhost:8001/api/voter
 Content-Type: application/json
 
 {
   "documento": 33999999,
-  "tipo": "DU",
-  "tomo": 33,
-  "folio": 555,
-  "apellidoNombre": "Popis",
-  "direccion": "algun ligar 444",
-  "calificativo": "SIN",
-  "telefono": "24589346734",
-  "lugar": "por ahi",
-  "correo": "algo@gmail.com"
+  "apellidoNombre": "Popis"
 }
 
 ###
-GET http://localhost:8001/api/members
+GET http://localhost:8001/api/voter
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE5NmFkY2U5OTk5YmJmNWNkMzBmMjlmNDljZDM3ZjRjNWU2NDI3NDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZWFzai1iZjg2ZiIsImF1ZCI6ImVhc2otYmY4NmYiLCJhdXRoX3RpbWUiOjE2Njk0MDA3NDEsInVzZXJfaWQiOiI0TzNrQ1dXdEg0VnEzOHNhVHZ6RlB5WmFWZ3MxIiwic3ViIjoiNE8za0NXV3RINFZxMzhzYVR2ekZQeVphVmdzMSIsImlhdCI6MTY2OTQwNDQwOSwiZXhwIjoxNjY5NDA4MDA5LCJlbWFpbCI6InBvcGlAbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsicG9waUBtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.lA-Q2W2JzFQXI8kw_v-7RaZt-1VvY2-lmoVZKfwTIFSfuy1yZQKTcIw3RoKjh_gHFJh9ocQsxZIn7L3GTgGpAgKZdefmaEymYVV3HyB2UepYTMydrTSHYNro7Y97E8QkafRQbnp9dbm50DbFv0LXGxXq6zs8LxYxG4IsHriKuXPFXf9RXHsTNxqdXlaokIlFHQOZrYusHcAu9qnZDgumh-PKPqCa7k1ez4g9u7lJcwf9jPuL94vq9DkKoKtWxXekNqTgu2qQBjYa4066UiozhK_6kVUsw4VX0f5EVXl7DLScr09cSK6E9uj_WtNObbU8-v5xlp0yQn5ov7bEVfLreg
 
 ###
-GET http://localhost:8001/api/members/6338c16dfcf6a12031d10a1a
+GET http://localhost:8001/api/voter/637fe0d75b743ac2f54ac1fe
 
 ###
-PATCH http://localhost:8001/api/members/6338c16dfcf6a12031d10a1a
+PATCH http://localhost:8001/api/voter/6338c16dfcf6a12031d10a1a
 Content-Type: application/json
 
 {
   "name": "Pipo"
 }
+
+
