@@ -1,0 +1,6 @@
+###
+GET http://localhost:8001/api/fiscal
+
+
+###
+PATCH http://localhost:8001/api/fiscal/637fe0d75b743ac2f54ac1f8?voto=false

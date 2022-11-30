@@ -18,6 +18,7 @@ exports.getAll = async (req, res, next) => {
         matricula: v.matricula,
         voto: v.voto,
         n: v.n,
+        info_id: aux[0]?._id,
         member_id: aux[0]?.member_id,
         calificativo: aux[0]?.calificativo,
         ELLOSnos: aux[0]?.ELLOSnos,

@@ -46,18 +46,34 @@ exports.updateOne = async (req, res, next)=>{
       observacion,
       telefono
     } = req.body;
+    let newInfo = {
+      _id,
+      member_id,
+      calificativo,
+      observacion,
+      telefono
+    };
+    if(calificativo === 'ELLOS'){
+      newInfo.ELLOSnos = ELLOSnos;
+      newInfo.INHABnos = false;
+    }
+    if(calificativo === 'INHAB') {
+      newInfo.INHABnos = INHABnos;
+      newInfo.ELLOSnos = false;
+    }
     let newVoterInfo = [];
+    console.log(newInfo);
     let aux = await User.findOne({user_id: user_uid})
     const existe = aux.voter_info.filter(v=>`${v.member_id}`=== `${member_id}`)
      if(existe.length>0){
        newVoterInfo = aux.voter_info.map(info=>{
         if(`${info.member_id}` === `${member_id}`){
-            info.member_id= member_id,
-            info.calificativo= calificativo,
-            info.ELLOSnos= ELLOSnos,
-            info.INHABnos= INHABnos,
-            info.observacion= observacion,
-            info.telefono= telefono
+            info.member_id= newInfo.member_id,
+            info.calificativo= newInfo.calificativo,
+            info.ELLOSnos= newInfo.ELLOSnos,
+            info.INHABnos= newInfo.INHABnos,
+            info.observacion= newInfo.observacion,
+            info.telefono= newInfo.telefono
         }
         return info
        })
@@ -65,11 +81,12 @@ exports.updateOne = async (req, res, next)=>{
       newVoterInfo = [...aux.voter_info];
       newVoterInfo.push(
         {member_id: mongoose.Types.ObjectId(_id),
-          calificativo,
-          ELLOSnos: !!ELLOSnos,
-          INHABnos: !!INHABnos,
-          observacion,
-          telefono}
+          calificativo: newInfo.calificativo,
+          ELLOSnos: newInfo.ELLOSnos,
+          INHABnos: newInfo.INHABnos,
+          observacion: newInfo.observacion,
+          telefono: newInfo.telefono
+      }
       ) 
      }
     aux.voter_info = [...newVoterInfo];
@@ -78,6 +95,7 @@ exports.updateOne = async (req, res, next)=>{
     const rta = voters.map(v=>{
       let auxiliar = aux.voter_info.filter(val=>`${val.member_id}` === `${v._id}`)
       let item= {
+        _id: v._id,
         documento: v.documento,
         apellidoNombre: v.apellidoNombre,
         matricula: v.matricula,
