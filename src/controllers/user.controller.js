@@ -64,10 +64,10 @@ exports.updateOne = async (req, res, next)=>{
     let newVoterInfo = [];
     console.log(newInfo);
     let aux = await User.findOne({user_id: user_uid})
-    const existe = aux.voter_info.filter(v=>`${v.member_id}`=== `${member_id}`)
+    const existe = aux.voter_info.filter(v=>`${v.member_id}`=== `${_id}`)
      if(existe.length>0){
        newVoterInfo = aux.voter_info.map(info=>{
-        if(`${info.member_id}` === `${member_id}`){
+        if(`${info.member_id}` === `${_id}`){
             info.member_id= newInfo.member_id,
             info.calificativo= newInfo.calificativo,
             info.ELLOSnos= newInfo.ELLOSnos,
