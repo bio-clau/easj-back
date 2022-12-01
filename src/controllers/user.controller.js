@@ -70,8 +70,8 @@ exports.updateOne = async (req, res, next)=>{
         if(`${info.member_id}` === `${_id}`){
             info.member_id= newInfo.member_id,
             info.calificativo= newInfo.calificativo,
-            info.ELLOSnos= newInfo.ELLOSnos,
-            info.INHABnos= newInfo.INHABnos,
+            info.ELLOSnos= !!newInfo.ELLOSnos,
+            info.INHABnos= !!newInfo.INHABnos,
             info.observacion= newInfo.observacion,
             info.telefono= newInfo.telefono
         }
@@ -82,8 +82,8 @@ exports.updateOne = async (req, res, next)=>{
       newVoterInfo.push(
         {member_id: mongoose.Types.ObjectId(_id),
           calificativo: newInfo.calificativo,
-          ELLOSnos: newInfo.ELLOSnos,
-          INHABnos: newInfo.INHABnos,
+          ELLOSnos: !!newInfo.ELLOSnos,
+          INHABnos: !!newInfo.INHABnos,
           observacion: newInfo.observacion,
           telefono: newInfo.telefono
       }
