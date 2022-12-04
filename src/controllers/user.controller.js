@@ -20,6 +20,16 @@ exports.getOne = async (req, res, next)=>{
   }
 }
 
+exports.getMe = async (req, res, next) => {
+  try {
+    const user_uid = req.authUser.uid;
+    const userFound = await User.findOne({user_id: user_uid});
+    res.status(200).json(userFound)
+  } catch (error) {
+    return next(error)
+  }
+}
+
 exports.createOne = async (req, res, next)=>{
   try {
     const {role, user_id} = req.body;

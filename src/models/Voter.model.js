@@ -16,9 +16,6 @@ const VoterSchema = mongoose.Schema({
   },
   telefono_aux: {
     type: String
-  },
-  n: {
-    type: Number
   }
 });
 
