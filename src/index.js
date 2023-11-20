@@ -27,6 +27,7 @@ app.use((req, res, next) => {
   });
 
 //Routes
+app.use('/api', require('./routes/public.routes'))
 app.use('/api/voter', auth, require('./routes/voter.routes'))
 app.use('/api/user', auth, require('./routes/user.routes'))
 app.use('/api/admin', auth, require('./routes/admin.routes'))
