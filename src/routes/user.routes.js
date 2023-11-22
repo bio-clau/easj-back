@@ -15,7 +15,7 @@ router.route('/')
     .get(getMe)
 router.route('/:user_id')
   .get(getOne)
-  .patch(updateOne)
+  // .patch(updateOne)
   // .delete(deleteOne)
 
 
